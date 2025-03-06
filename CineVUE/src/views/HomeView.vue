@@ -1,6 +1,7 @@
 <script setup>
 import Navbar from '../components/Navbar.vue'
 import Header from '@/components/Header.vue';
+import ReviewCard from '@/components/ReviewCard.vue';
 </script>
 
 <template>
@@ -13,10 +14,9 @@ import Header from '@/components/Header.vue';
 
   <hr>
   <h2>Recensioni in evidenza</h2>
-  <h3>MommyDemi - "Anora"? No grazie</h3>
-
-  <p>Ma davvero? Davvero Mikey Madison ha portato a casa l’Oscar per la miglior attrice protagonista mentre The Substance e una straordinaria Demi Moore sono state ignorate? Siamo davanti all'ennesima dimostrazione che l’Academy è un circo autoreferenziale, più interessato a seguire mode del momento che a premiare il vero talento.</p>
-  <p><b>Giudizio:</b> 1/5 - <b>Likes:</b> 1.2k - <b>Dislikes:</b> 392</p>
+  <ReviewCard></ReviewCard>
+  <ReviewCard></ReviewCard>
+  
 </template>
 
 
