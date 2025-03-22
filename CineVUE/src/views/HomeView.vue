@@ -9,7 +9,7 @@ import ReviewCard from '@/components/ReviewCard.vue';
     <Navbar></Navbar>
   
   <h2>Benvenuti in questo sito!</h2>
-  <p>Su <a href="about.html"><i>Cineva</i></a> potete scrivere recensioni su <u>film e serie tv</u>
+  <p id="intro">Su <a href="about.html"><i>Cineva</i></a> potete scrivere recensioni su <u>film e serie tv</u>
       e condividere i vostri pensieri con la <b>community</b>!</p>
 
   <hr>

@@ -13,3 +13,25 @@ import { RouterLink } from 'vue-router'
       </ul>
   </nav>
 </template>
+
+<style>
+nav li {
+  list-style-type: none;
+}
+nav li > a {
+  color: var(--black)
+}
+
+a:link {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:hover {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+</style>
+
+
