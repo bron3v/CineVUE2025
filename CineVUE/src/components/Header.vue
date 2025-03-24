@@ -1,7 +1,7 @@
 <template>
     <header>
         <a href="/">
-            <img src="../assets/img/logo.png" alt="Logo Cineva" width="200">
+            <img src="../assets/img/logo.png" alt="Logo Cineva" width="400">
         </a>
     </header>
 </template>

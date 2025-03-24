@@ -31,7 +31,6 @@ a:hover {
   font-weight: bold;
   color: var(--primary);
 }
-
 </style>
 
 

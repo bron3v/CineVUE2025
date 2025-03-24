@@ -2,6 +2,7 @@
 import Navbar from '../components/Navbar.vue'
 import Header from '@/components/Header.vue';
 import ReviewCard from '@/components/ReviewCard.vue';
+import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
@@ -22,6 +23,8 @@ import ReviewCard from '@/components/ReviewCard.vue';
     <h1>News meno recenti</h1>
     <ReviewCard></ReviewCard>
     <ReviewCard></ReviewCard>
+    
+    <Footer></Footer>
 </template>
 
 
