@@ -7,8 +7,9 @@ import Footer from '@/components/Footer.vue';
 <template>
     <Header></Header>
     <Navbar></Navbar>
-    <h1>Cineva - Nuova Recensione</h1>
-    <div>
+    <article>
+        <div>
+            <h1>Cineva - Nuova Recensione</h1>
         <form action="newreview" method = "POST">
             <label for="title">Titolo:</label>
             <input type="text" id="title" name="title">
@@ -34,6 +35,9 @@ import Footer from '@/components/Footer.vue';
             <input type="submit" value="Pubblica">
         </form>
     </div>
+    </article>
+    
+    
     <Footer></Footer>
 
 </template>

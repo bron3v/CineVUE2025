@@ -7,6 +7,7 @@ import Footer from '@/components/Footer.vue';
 <template>
     <Header></Header>
     <Navbar></Navbar>
+    <article>
     <h1>Cineva - Contatti</h1>
     <div>
         <p>Se avete bisongo di qualsiasi tipo di assistenza potete contattarci ai seguenti indirizzi</p>
@@ -22,6 +23,7 @@ import Footer from '@/components/Footer.vue';
             <i>Via Ospedale 72, 09124, Cagliari CA</i>
         </p>
     </div>  
+</article>
     <Footer></Footer>
 </template>
 

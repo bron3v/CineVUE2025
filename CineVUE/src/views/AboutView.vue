@@ -7,6 +7,7 @@ import Footer from '@/components/Footer.vue';
 <template>
     <Header></Header>
     <Navbar></Navbar>
+    <article>
   <h1>Cosa è Cineva?</h1>
   <a href="/">Torna alla pagina iniziale</a>
   <div>
@@ -41,6 +42,7 @@ import Footer from '@/components/Footer.vue';
     <p>Cineva è completamente gratuito e lo sarà per sempre.</p>
     <a href="#indice">Torna su</a>
   </div>
+</article>
   
   <Footer></Footer>
 </template>

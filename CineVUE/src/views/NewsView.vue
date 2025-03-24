@@ -9,7 +9,8 @@ import Footer from '@/components/Footer.vue';
     <Header></Header>
     <Navbar></Navbar>
   
-    <h1>Novità dal mondo del Cinema</h1>
+    <article>
+        <h1>Novità dal mondo del Cinema</h1>
     <ReviewCard></ReviewCard>
     <ReviewCard></ReviewCard>
     
@@ -23,6 +24,8 @@ import Footer from '@/components/Footer.vue';
     <h1>News meno recenti</h1>
     <ReviewCard></ReviewCard>
     <ReviewCard></ReviewCard>
+    </article>
+    
     
     <Footer></Footer>
 </template>
