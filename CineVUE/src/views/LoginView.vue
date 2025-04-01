@@ -1,51 +1,79 @@
 <script setup>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-    <Header></Header>
 
-    <h1>Cineva - Login</h1>
-    <form action="login" method = "POST">
-        <label for="ex_input">Esempio:</label>
-        <input type="number" id="ex_input" name="ex_input" min="1" max="10">
-        
-        <!-- date
-        <input type="date" id="ex_date" name="ex_date">
-        -->
-
-        <!-- checkbox 
-        <input type="checkbox" id="ex_checkbox" name="ex_checkbox">
-        -->
-
-        <!-- radio 
-        <input type="radio" id="ex_radio" name="ex_radio" value="1">
-        <input type="radio" id="ex_radio" name="ex_radio" value="2"> 
-        -->
-
-        <!-- select
-        <select id="rating" name="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        -->
-       
-        <!--  <br> -->
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-
-        <input type="submit" value="Accedi">
-    </form>
-    <Footer></Footer>
+    <div id="loginContent">
+        <div id="loginForm">
+            <img src="../assets/img/logo.png" alt="Logo" width="300" >
+            <h1>Login</h1>
+            <form action="login" method = "POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <input type="submit" value="Accedi">
+            </form>
+        </div>
+    </div>
+    
     
 </template>
 
 <style>
 
+#loginContent {
+    height: 600px;
+    width: auto;
+}
+
+#loginForm {
+    text-align: center;
+    background: var(--primary);
+    color: var(--white);
+
+    position: absolute;
+    top: 65%;
+    left: 50%;
+
+    padding: 20px;
+    margin: 0;
+
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#loginForm h1 {
+    color: var(--white);
+}
+
+#loginForm input {
+    display: block;
+    width: 66%;
+    margin-left: 16%;
+    margin-top: 2%;
+}
+
+#loginForm input[type="submit"] {
+    background: var(--white);
+    color: var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+    
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 68%;
+}
+
+#loginForm input[type="submit"]:hover {
+    background: var(--tertiary);
+    color: var(--white);
+}
+
+#loginForm label {
+    font-weight: bold;
+}
 </style>

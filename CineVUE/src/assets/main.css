@@ -8,6 +8,8 @@ body {
 nav {
     background: var(--secondary);
     text-align: center;
+    position: sticky;
+    top: 0px;
   }
 
 h1, h2, h3 {
@@ -23,4 +25,14 @@ header {
 #intro {
   text-align: center;
   font-weight: bold;
+}
+
+.newsCard {
+  background: var(--white);
+
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }

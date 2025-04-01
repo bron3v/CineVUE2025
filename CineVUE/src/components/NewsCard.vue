@@ -1,14 +1,14 @@
 <template>
-    <h2>
-        The Substance: Mikey Madison è la vera Elizabeth di Demi Moore
-    </h2>
-    <p><b>4 Marzo 2025</b></p>
-    <p>
-        La grande delusa degli Oscar 2025 è lei, Demi Moore, favoritissima per la statuetta di Miglior attrice per la sua interpretazione in The Substance e battuta dalla sorpresa Mikey Madison. Una vittoria, anche, generazionale: 25 anni Madison e 62 anni Moore, alla sua prima nomination dopo una lunghissima carriera.
-    </p>
-
-    <hr>
-    <br>
+    <div class="newsCard">
+        <h2 id="titoloNews">
+        The Substance: Mikey Madison è la vera Sue di Demi Moore
+        </h2>
+        <p id="data"><b>4 Marzo 2025</b></p>
+        <p>
+            La grande delusa degli Oscar 2025 è lei, Demi Moore, favoritissima per la statuetta di Miglior attrice per la sua interpretazione in The Substance e battuta dalla sorpresa Mikey Madison. Una vittoria, anche, generazionale: 25 anni Madison e 62 anni Moore, alla sua prima nomination dopo una lunghissima carriera.
+        </p>
+    </div>
+    
 
     <!--<h2>
         Wicked: migliori costumi per l'Academy
@@ -28,3 +28,9 @@
     </p>
     -->
 </template>
+
+<style>
+
+
+
+</style>

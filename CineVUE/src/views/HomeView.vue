@@ -1,15 +1,8 @@
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Header from '@/components/Header.vue';
 import ReviewCard from '@/components/ReviewCard.vue';
-import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-    <Header></Header>
-    <Navbar></Navbar>
-  
-  
     <article>
       <div>
         <h2>Benvenuti in questo sito!</h2>
@@ -38,38 +31,86 @@ import Footer from '@/components/Footer.vue';
           </tr>
 
           <tr>
-            <td><b>1</b></td>
+            <td class="firstEl"><b>1</b></td>
             <td>Demi Moore</td>
             <td>1000</td>
           </tr>
           <tr>
-            <td><b>2</b></td>
+            <td class="firstEl"><b>2</b></td>
             <td>Andrew Garfield</td>
             <td>990</td>
           </tr>
 
           <tr>
-            <td><b>3</b></td>
+            <td class="firstEl"><b>3</b></td>
             <td>Emma Stone</td>
             <td>700</td>
           </tr>
           <tr>
-            <td rowspan="2"><b>Altri</b></td>
+            <td rowspan="2" class="firstEl leftCorner"><b>Altri</b></td>
             <td>Bradley Cooper</td>
             <td>750</td>
           </tr>
           <tr>
             <!-- <td><b>Altri</b></td> -->
             <td>Lady Gaga</td>
-            <td>650</td>
+            <td class="rightCorner">650</td>
           </tr>
         </table>
 
       </div>
 
     </article>
-  <Footer></Footer>
 </template>
 
+<style>
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    border-radius: 10px;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px;
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+td.firstEl {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: bold;
+}
+
+td.leftCorner {
+    border-bottom-left-radius: 10px;
+}
+
+tr:nth-child(even){
+    background-color: var(--secondary);
+}
+
+td.rightCorner {
+    border-bottom-right-radius: 10px;
+}
+
+</style>
 
 

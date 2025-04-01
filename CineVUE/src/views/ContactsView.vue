@@ -1,12 +1,7 @@
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-    <Header></Header>
-    <Navbar></Navbar>
     <article>
     <h1>Cineva - Contatti</h1>
     <div>
@@ -24,7 +19,6 @@ import Footer from '@/components/Footer.vue';
         </p>
     </div>  
 </article>
-    <Footer></Footer>
 </template>
 
 <style>

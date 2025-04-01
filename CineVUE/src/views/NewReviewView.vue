@@ -1,12 +1,7 @@
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-    <Header></Header>
-    <Navbar></Navbar>
     <article>
         <div>
             <h1>Cineva - Nuova Recensione</h1>
@@ -36,10 +31,6 @@ import Footer from '@/components/Footer.vue';
         </form>
     </div>
     </article>
-    
-    
-    <Footer></Footer>
-
 </template>
 <style>
 </style>

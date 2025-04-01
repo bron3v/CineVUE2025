@@ -1,14 +1,8 @@
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Header from '@/components/Header.vue';
 import AdminCard from '@/components/AdminCard.vue';
-import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-    <Header></Header>
-    <Navbar></Navbar>
-    
     <h1>Cineva - Chi siamo</h1>
     <div>
         <p>
@@ -19,9 +13,6 @@ import Footer from '@/components/Footer.vue';
         </p>
     </div>
     <AdminCard></AdminCard>
-    
-    <Footer></Footer>
-    
 </template>
 
 

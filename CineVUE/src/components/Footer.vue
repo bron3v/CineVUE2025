@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer class="col-12">
         <p>© 2025 Cineva</p>
         <p>Realizzato da Fabio Pili e Michele Faedda</p>
         <p>Per assistenza: <a href="mailto:cineva@email.com">cineva@email.com</a></p>
