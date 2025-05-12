@@ -8,10 +8,15 @@ import Footer from '@/components/Footer.vue';
 <template>
   <Header></Header>
   <Navbar></Navbar>
-  <RouterView />
+  <div class="cols">
+    <RouterView />
   <Footer></Footer>
+  </div>
+  
 </template>
 
 <style>
-
+.cols{
+  overflow: hidden;
+}
 </style>
