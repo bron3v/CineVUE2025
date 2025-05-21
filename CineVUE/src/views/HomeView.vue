@@ -1,7 +1,3 @@
-<script setup>
-import ReviewCard from '@/components/ReviewCard.vue';
-</script>
-
 <template>
     <article>
       <div>
@@ -14,8 +10,14 @@ import ReviewCard from '@/components/ReviewCard.vue';
       <hr>
       <div>
         <h2>Recensioni in evidenza</h2>
-        <ReviewCard></ReviewCard>
-        <ReviewCard></ReviewCard>
+        <!--<ReviewCard :titolo="titolo" :commento="commento" :voto="voto" 
+        :num_like="num_like" :num_dislike="num_dislike">
+        </ReviewCard>-->
+        <div v-for="review in reviews" :key="review.id">
+          <ReviewCard :titolo="review.titolo" :commento="review.commento" :voto="review.voto" 
+          :num_like="review.num_like" :num_dislike="review.num_dislike">
+          </ReviewCard>
+        </div>
       </div>
 
       <hr>
@@ -62,6 +64,60 @@ import ReviewCard from '@/components/ReviewCard.vue';
 
     </article>
 </template>
+
+<script>
+import ReviewCard from '@/components/ReviewCard.vue';
+import * as Api from '@/utils/apis.js'
+/*export default {
+  components: {
+    ReviewCard
+  },
+  data(){
+    return {
+      titolo: "", 
+      commento : "", 
+      voto: 0, 
+      num_like: 0, 
+      num_dislike: 0
+    }
+  },
+  methods:{
+    async getReviewById(id){
+      const data = await Api.getReviewById(id);
+      console.log(data);
+      this.titolo = data.titolo; 
+      this.commento = data.commento; 
+      this.voto = data.voto; 
+      this.num_like = data.num_like; 
+      this.num_dislike = data.num_dislike; 
+    }
+  },
+    mounted(){
+      this.getReviewById(4);
+    }
+  }*/
+  export default {
+    components: {
+      ReviewCard,
+    },
+    data(){
+      return {
+        reviews: []
+      }
+    },
+    methods:{
+      async getReviews(){
+        const data = await Api.getReviews();
+        this.reviews = data; 
+        
+      }
+    },
+      mounted(){
+        this.getReviews();
+      }
+    }
+
+</script>
 
 <style>
 

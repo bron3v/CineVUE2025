@@ -1,13 +1,41 @@
+<script>
+    export default{
+        props: {
+            titolo:{
+                type: String, 
+                required: true
+            },
+            commento: {
+                type: String, 
+                required: true
+            },
+            voto: {
+                type: Number, 
+                required: true
+            }, 
+            num_like: {
+                type: Number, 
+                default: 0
+            }, 
+            num_dislike: {
+                type: Number, 
+                default: 0
+            }
+        }
+    }
+</script>
+
 <template>
     <div class="newsCard">
-        <h3 class="review-title">MommyDemi - "Anora"? No grazie</h3>
+        <h3 class="review-title">{{ titolo }}</h3>
 
-        <p class="review-content">Ma davvero? Davvero Mikey Madison ha portato a casa l’Oscar per la miglior attrice protagonista mentre The Substance e una straordinaria Demi Moore sono state ignorate? Siamo davanti all'ennesima dimostrazione che l’Academy è un circo autoreferenziale, più interessato a seguire mode del momento che a premiare il vero talento.</p>
+        <p class="review-content">{{ commento }}</p>
 
-        <p><b>Giudizio:</b> 1/5 - <b>Likes:</b> 1.2k - <b>Dislikes:</b> 392</p>
+        <p> <b>Giudizio:</b> {{ voto }} - 
+            <b>Likes:</b> {{ num_like }} - 
+            <b>Dislikes:</b> {{ num_dislike }}
+        </p>
     </div>
-    
-
 </template>
 
 <style>
