@@ -1,4 +1,28 @@
-<script setup>
+<script >
+import { useSessionStore } from '@/stores/session';
+import * as Auth from '@/utils/auth.js';
+export default {
+    data() {
+        return {
+            username: '',
+            password: '',
+        };
+    },
+    methods: {
+        async login() {
+            console.log('Sono dentro login');
+            const data = await Auth.login(this.username, this.password);
+            
+            if(data.userId) {
+                console.log('Login avvenuto con successo');
+                useSessionStore().setUser(data.userId);
+                this.$router.push('/');
+            } else {
+                alert('Login fallito!')
+            }
+        },
+    },
+};
 </script>
 
 <template>
@@ -9,10 +33,10 @@
             <h1>Login</h1>
             <form action="login" method = "POST">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username">
+                <input type="text" id="username" name="username" v-model="username">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password">
-                <input type="submit" value="Accedi">
+                <input type="password" id="password" name="password" v-model="password">
+                <input type="submit" value="Accedi" @click.stop.prevent="login()">
             </form>
         </div>
     </div>

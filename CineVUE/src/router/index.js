@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useSessionStore } from '@/stores/session.js'
+import * as Auth from '@/utils/auth.js'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import ContactsView from '@/views/ContactsView.vue'
@@ -6,6 +8,7 @@ import NewsView from '@/views/NewsView.vue'
 import WhoView from '@/views/WhoView.vue'
 import LoginView from '@/views/LoginView.vue' 
 import NewReview from '@/views/NewReviewView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -47,8 +50,37 @@ const router = createRouter({
       path: '/newreview',
       name: 'newreview',
       component: NewReview,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: ProfileView,
+      meta: {
+        requiresAuth: true
+      }
     }
   ],
+})
+
+router.beforeEach(async (to, from, next) => {
+  const sessionStore = useSessionStore();
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    const userId = sessionStore.getUser();
+    const data = await Auth.isLogged();
+    if (userId === null || userId !== data.userId) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })
 
 export default router
