@@ -1,8 +1,12 @@
 <script>
 import { useSessionStore } from '@/stores/session';
 import * as Auth from '@/utils/auth.js';
+import UploadImg from '@/components/UploadImg.vue';
 
 export default {
+    components: {
+        UploadImg
+    },
     data() {
         return {
             username: '',
@@ -32,4 +36,7 @@ export default {
         <p>Benvenuto {{ username }}!</p>
         <button @click="logout">Logout</button>
     </div>
+
+    <!-- Sezione per upload immagini carosello -->
+    <UploadImg></UploadImg>
 </template>

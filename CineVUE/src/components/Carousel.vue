@@ -33,7 +33,6 @@
 
 <script>
 export default {
-  name: 'ManualCarousel',
   data() {
     return {
       images: [
@@ -58,16 +57,10 @@ export default {
     startAutoSlide() {
       this.interval = setInterval(this.next, 3000)
     },
-    stopAutoSlide() {
-      clearInterval(this.interval)
-    },
   },
   mounted() {
     this.startAutoSlide()
-  },
-  beforeUnmount() {
-    this.stopAutoSlide()
-  },
+  }
 }
 </script>
 
