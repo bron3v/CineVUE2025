@@ -7,6 +7,8 @@
           e condividere i vostri pensieri con la <b>community</b>!</p>
       </div>
 
+      <Carousel></Carousel>
+
       <hr>
       <div>
         <h2>Recensioni in evidenza</h2>
@@ -64,10 +66,12 @@
 
 <script>
 import ReviewCard from '@/components/ReviewCard.vue';
+import Carousel from '@/components/Carousel.vue';
 import * as Api from '@/utils/apis.js'
   export default {
     components: {
       ReviewCard,
+      Carousel
     },
     data(){
       return {
