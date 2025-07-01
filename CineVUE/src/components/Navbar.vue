@@ -1,25 +1,25 @@
 <script>
 import { RouterLink } from 'vue-router'
-import { useSessionStore } from '@/stores/session';
-
+import { useSessionStore } from '@/stores/sessions';
 export default {
-    components: {
-        RouterLink
-    },
-    data() {
-        return {
-            sessionStore: useSessionStore(),
-        };
-    },
-    methods: {
-        checkUser() {
-            if (this.sessionStore.getUser() == null) {
-                return false;
-            } else {
-                return true;
-            }
-        },
-    },
+  components: {
+    RouterLink
+  },
+  data() {
+    return {
+      sessionStore: useSessionStore(),
+    }
+  },
+  methods: {
+    checkUser() {
+      if(this.sessionStore.getUser() === null){
+        return false;
+      }else {
+        return true;
+      }
+    }
+  }
+
 }
 </script>
 
@@ -32,8 +32,8 @@ export default {
           <li><RouterLink to="/news">News</RouterLink></li>
           <li><RouterLink to="/who">Chi siamo</RouterLink></li>
           <li v-show="checkUser()"><RouterLink to="/newreview">Nuova recensione</RouterLink></li>
-          <li v-show="checkUser()"><RouterLink to="/profile">Profilo</RouterLink></li>
           <li v-show="!checkUser()"><RouterLink to="/login">Login</RouterLink></li>
+          <li v-show="checkUser()"><RouterLink to="/profile">Profile</RouterLink></li>
       </ul>
   </nav>
 </template>
@@ -68,3 +68,5 @@ a:hover {
 }
 
 </style>
+
+

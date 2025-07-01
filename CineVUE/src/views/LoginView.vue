@@ -1,28 +1,29 @@
-<script >
-import { useSessionStore } from '@/stores/session';
-import * as Auth from '@/utils/auth.js';
+<script>
+import { useSessionStore} from '@/stores/sessions';
+import * as Auth from '@/utils/auth.js'
+
 export default {
     data() {
         return {
-            username: '',
-            password: '',
-        };
+            username : '',
+            password : ''
+        }
     },
     methods: {
-        async login() {
-            console.log('Sono dentro login');
+        async login(){
+            console.log('Sono dentro login()!');
             const data = await Auth.login(this.username, this.password);
-            
+
             if(data.userId) {
-                console.log('Login avvenuto con successo');
                 useSessionStore().setUser(data.userId);
+                console.log(useSessionStore().getUser());
                 this.$router.push('/');
-            } else {
-                alert('Login fallito!')
+            }else{
+                alert('Login Fallito!')
             }
-        },
-    },
-};
+        }
+    }
+}
 </script>
 
 <template>

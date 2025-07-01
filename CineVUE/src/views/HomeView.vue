@@ -7,11 +7,12 @@
           e condividere i vostri pensieri con la <b>community</b>!</p>
       </div>
 
-      <Carousel></Carousel>
-
       <hr>
       <div>
         <h2>Recensioni in evidenza</h2>
+        <!--<ReviewCard :titolo="titolo" :commento="commento" :voto="voto" 
+        :num_like="num_like" :num_dislike="num_dislike">
+        </ReviewCard>-->
         <div v-for="review in reviews" :key="review.id">
           <ReviewCard :titolo="review.titolo" :commento="review.commento" :voto="review.voto" 
           :num_like="review.num_like" :num_dislike="review.num_dislike">
@@ -66,12 +67,38 @@
 
 <script>
 import ReviewCard from '@/components/ReviewCard.vue';
-import Carousel from '@/components/Carousel.vue';
 import * as Api from '@/utils/apis.js'
+/*export default {
+  components: {
+    ReviewCard
+  },
+  data(){
+    return {
+      titolo: "", 
+      commento : "", 
+      voto: 0, 
+      num_like: 0, 
+      num_dislike: 0
+    }
+  },
+  methods:{
+    async getReviewById(id){
+      const data = await Api.getReviewById(id);
+      console.log(data);
+      this.titolo = data.titolo; 
+      this.commento = data.commento; 
+      this.voto = data.voto; 
+      this.num_like = data.num_like; 
+      this.num_dislike = data.num_dislike; 
+    }
+  },
+    mounted(){
+      this.getReviewById(4);
+    }
+  }*/
   export default {
     components: {
       ReviewCard,
-      Carousel
     },
     data(){
       return {

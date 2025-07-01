@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useSessionStore } from '@/stores/session.js'
-import * as Auth from '@/utils/auth.js'
+import { useSessionStore } from '@/stores/sessions'
+import * as Auth from '@/utils/auth'
+
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import ContactsView from '@/views/ContactsView.vue'
@@ -47,35 +48,31 @@ const router = createRouter({
       component: LoginView,
     },
     {
-      path: '/newreview',
-      name: 'newreview',
-      component: NewReview,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
       path: '/profile',
       name: 'profile',
       component: ProfileView,
-      meta: {
-        requiresAuth: true
-      }
+      meta: {requiresAuth: true}
+    },
+    {
+      path: '/newreview',
+      name: 'newreview',
+      component: NewReview,
+      meta: {requiresAuth: true}
     }
   ],
 })
 
 router.beforeEach(async (to, from, next) => {
   const sessionStore = useSessionStore();
-  if (to.matched.some(record => record.meta.requiresAuth)) {
+  if(to.matched.some(record => record.meta.requiresAuth)) {
     const userId = sessionStore.getUser();
     const data = await Auth.isLogged();
-    if (userId === null || userId !== data.userId) {
+    if(userId === null || userId !== data.userId) {
       next({
-        path: '/login',
-        query: { redirect: to.fullPath }
+        path:'/login',
+        query: { redirect: to.fullPath}
       })
-    } else {
+    }else {
       next()
     }
   } else {

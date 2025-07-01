@@ -2,9 +2,9 @@ const login = async (username, pass) => {
     const response = await fetch('api/sessions/login', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, pass }),
+        body: JSON.stringify({username, pass})
     });
 
     return await response.json();
@@ -14,7 +14,7 @@ const logout = async () => {
     const response = await fetch('api/sessions/logout', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
     });
 
@@ -26,9 +26,8 @@ const isLogged = async () => {
     return await response.json();
 }
 
-
-export { 
+export {
     login,
     logout,
     isLogged
- };
+}

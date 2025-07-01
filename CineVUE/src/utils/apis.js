@@ -19,12 +19,7 @@ const getReviews = async () => {
     return await response.json();
 }
 
-const getFilmList = async () => {
-    const response = await fetch(`api/film/`); 
-    return await response.json();
-}
-
-const addReview = async (voto, commento, data, num_like, num_dislike, utente_id, film_id) => {
+const addReview = async(voto, commento, data, num_like, num_dislike, utente_id, film_id) => {
     const response = await fetch('api/recensioni/', {
         method: 'POST',
         headers: {
@@ -32,13 +27,19 @@ const addReview = async (voto, commento, data, num_like, num_dislike, utente_id,
         },
         body: JSON.stringify({voto, commento, data, num_like, num_dislike, utente_id, film_id})
     });
-    return await response.json()
+    return await response.json();
 }
+
+const getFilmList = async() => {
+    const response = await fetch('api/film/');
+    return await response.json();
+}
+
 
 // Esportiamo la funzione per poterla usare in altri file
 export { 
     getReviewById,
     getReviews,
-    getFilmList,
-    addReview
+    addReview,
+    getFilmList
 }

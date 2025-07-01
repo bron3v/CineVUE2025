@@ -1,42 +1,34 @@
+<template>
+    <h1>Profilo</h1>
+    <p>Benvenuto {{ username }}</p>
+    <button @click="logout()">Logout</button>
+</template>
+
 <script>
-import { useSessionStore } from '@/stores/session';
-import * as Auth from '@/utils/auth.js';
-import UploadImg from '@/components/UploadImg.vue';
+import {useSessionStore} from '@/stores/sessions';
+import * as Auth from '@/utils/auth.js'
 
 export default {
-    components: {
-        UploadImg
-    },
     data() {
         return {
             username: '',
             sessionStore: useSessionStore(),
-        };
+        }
     },
     methods: {
-        async logout(){
+        async logout() {
             await Auth.logout();
             this.sessionStore.setUser(null);
-            this.$router.push('/');r('Logout failed:', error);
-            
+            this.$router.push('/');
         },
-        getUser() {
+        getUser(){
             this.username = this.sessionStore.getUser();
-        },
+        }
     },
     mounted() {
         this.getUser();
-    },
+    }
 }
 </script>
 
-<template>
-    <div class="profile-view">
-        <h1>Profile</h1>
-        <p>Benvenuto {{ username }}!</p>
-        <button @click="logout">Logout</button>
-    </div>
 
-    <!-- Sezione per upload immagini carosello -->
-    <UploadImg></UploadImg>
-</template>
